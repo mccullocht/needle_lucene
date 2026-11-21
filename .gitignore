@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+weights/
+lucene/lib/
+logs_train.txt
+
+# Training data: keep the sets the released model was trained/evaluated on.
+data/*.jsonl
+!data/handwritten_eval.jsonl
+!data/train2.jsonl
+!data/synth_eval2.jsonl
+
+# Models: keep the released model and the LoRA adapter it was built from.
+# The base checkpoint (needle3.safetensors) is downloadable, so it is not committed.
+checkpoints/*
+!checkpoints/lucene_lora_r2.safetensors
+models/*.cact
+!models/needle_lucene.cact
